@@ -45,7 +45,7 @@ first_name = 'Ahmed'
 *   Python has a built-in function called `print` that prints things as text.
 *   Call the function (i.e., tell Python to run it) by using its name.
 *   Provide values to the function (i.e., the things to print) in parentheses.
-*   To add a string to the printout, wrap the string in single quotations.
+*   To add text to the printout, wrap the text in single quotations.
 *   The values passed to the function are called 'arguments'
 
 ~~~
@@ -59,6 +59,28 @@ Ahmed is 42 years old
 
 *   `print` automatically puts a single space between items to separate them.
 *   And wraps around to a new line at the end.
+
+## Python is case-sensitive.
+
+*   Python thinks that upper- and lower-case letters are different,
+    so `Name` and `name` are different variables.
+*   There are conventions for using upper-case letters at the start of variable names
+    so we will use lower-case letters for now.
+
+## Use meaningful variable names.
+
+*   Python doesn't care what you call variables as long as they obey the rules
+    (alphanumeric characters and the underscore).
+
+~~~
+flabadab = 42
+ewr_422_yY = 'Ahmed'
+print(ewr_422_yY, 'is', flabadab, 'years old')
+~~~
+{: .python}
+
+*   Use meaningful variable names to help other people understand what the program does.
+*   The most important "other person" is your future self.
 
 ## Variables must be created before they are used.
 
@@ -96,6 +118,7 @@ NameError: name 'last_name' is not defined
 
 *   We can use variables in calculations just as if they were values.
     *   Remember, we assigned 42 to `age` a few lines ago.
+    *   We update the value of a variable using its current value (`age + 3`)
 
 ~~~
 age = age + 3
@@ -123,10 +146,15 @@ atom_name = 'helium'
 print(atom_name[0])
 ~~~
 {: .python}
+
 ~~~
 h
 ~~~
 {: .output}
+
+> ## When would I use this ?
+> This is useful when ...
+{: .callout}
 
 ## Use a slice to get a substring.
 
@@ -138,7 +166,6 @@ h
 *   We take a slice by using `[start:stop]`, where `start` is replaced with the
     index of the first element we want and `stop` is replaced with the index of
     the element just after the last element we want.
-*   Mathematically, you might say that a slice selects `[start:stop)`.
 *   The difference between stop and start is the slice's length.
 *   Taking a slice does not change the contents of the original string. Instead,
     the slice is a copy of part of the original string.
@@ -151,6 +178,10 @@ print(atom_name[0:3])
 sod
 ~~~
 {: .output}
+
+> ## When would I use this ?
+> This is useful when ...
+{: .callout}
 
 ## Use the built-in function `len` to find the length of a string.
 
@@ -166,86 +197,21 @@ print(len('helium'))
 *   Nested functions are evaluated from the inside out,
     just like in mathematics.
 
-## Python is case-sensitive.
-
-*   Python thinks that upper- and lower-case letters are different,
-    so `Name` and `name` are different variables.
-*   There are conventions for using upper-case letters at the start of variable names
-    so we will use lower-case letters for now.
-
-## Use meaningful variable names.
-
-*   Python doesn't care what you call variables as long as they obey the rules
-    (alphanumeric characters and the underscore).
-
-~~~
-flabadab = 42
-ewr_422_yY = 'Ahmed'
-print(ewr_422_yY, 'is', flabadab, 'years old')
-~~~
-{: .python}
-
-*   Use meaningful variable names to help other people understand what the program does.
-*   The most important "other person" is your future self.
-
-> ## Swapping Values
->
-> Draw a table showing the values of the variables in this program
-> after each statement is executed.
-> In simple terms, what do the last three lines of this program do?
->
-> ~~~
-> x = 1.0
-> y = 3.0
-> swap = x
-> x = y
-> y = swap
-> ~~~
-> {: .python}
-> > ## Solution
-> >
-> > ~~~
-> > swap = x  #  x->1.0 y->3.0 swap->1.0
-> > x = y     #  x->3.0 y->3.0 swap->1.0
-> > y = swap  #  x->3.0 y->1.0 swap->1.0
-> > ~~~
-> > These three lines exchange the values in `x` and `y` using the `swap`
-> > variable for temporary storage. This is a fairly common programming idiom.
->{: .solution}
-{: .challenge}
-
-> ## Predicting Values
+> ## Assigning Values
 >
 > What is the final value of `position` in the program below?
-> (Try to predict the value without running the program,
-> then check your prediction.)
+> (Try to think what the value of `position` will be without running the program,
+> then run the program to check your prediction.)
 >
 > ~~~
 > initial = "left"
 > position = initial
 > initial = "right"
+> print(position)
 > ~~~
 > {: .python}
-{: .challenge}
-
-> ## Challenge
->
-> If you assign `a = 123`,
-> what happens if you try to get the second digit of `a`?
->
 > > ## Solution
-> > Numbers are not stored in the written representation,
-> > so they can't be treated like strings.
-> >
-> > ~~~
-> > a = 123
-> > print(a[1])
-> > ~~~
-> > {: .python}
-> > ~~~
-> > TypeError: 'int' object is not subscriptable
-> > ~~~
-> > {: .error}
+> > "left"
 > {: .solution}
 {: .challenge}
 
@@ -281,9 +247,19 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 > ~~~
 > {: .output}
 >
-> 1.  What does `thing[low:high]` do?
-> 2.  What does `thing[low:]` (without a value after the colon) do?
-> 3.  What does `thing[:high]` (without a value before the colon) do?
-> 4.  What does `thing[:]` (just a colon) do?
-> 5.  What does `thing[number:negative-number]` do?
+> We can also use variables as our slicing indices. For example if we had ,
+> numbers: `low = 3`, `high = 8` and `negative = -1`
+> 1.  What does `library_name[low:high]` do?
+> 2.  What does `library_name[low:]` (without a value after the colon) do?
+> 3.  What does `library_name[:high]` (without a value before the colon) do?
+> 4.  What does `library_name[:]` (just a colon) do?
+> 5.  What does `library_name[low:negative]` do?
+>
+> > ## Solution
+> > 1. ial s  
+> > 2. ial sciences  
+> > 3. social s  
+> > 4. social sciences  
+> > 5. ial science  
+> {: .solution}
 {: .challenge}
