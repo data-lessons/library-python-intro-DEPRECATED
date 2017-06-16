@@ -10,13 +10,14 @@ objectives:
 keypoints:
 - "Use variables to store values."
 - "Use `print` to display values."
+- "Variables persist between cells."
 - "Variables must be created before they are used."
-- "Python is case-sensitive."
-- "Use meaningful variable names."
 - "Variables can be used in calculations."
 - "Use an index to get a single character from a string."
 - "Use a slice to get a substring."
 - "Use the built-in function `len` to find the length of a string."
+- "Python is case-sensitive."
+- "Use meaningful variable names."
 ---
 ## Use variables to store values.
 
@@ -44,7 +45,7 @@ first_name = 'Ahmed'
 *   Python has a built-in function called `print` that prints things as text.
 *   Call the function (i.e., tell Python to run it) by using its name.
 *   Provide values to the function (i.e., the things to print) in parentheses.
-*   To add text to the printout, wrap the text in single quotes (double quotes are also fine to use).
+*   To add text to the printout, wrap the text in single quotations.
 *   The values passed to the function are called 'arguments'
 
 ~~~
@@ -104,6 +105,15 @@ NameError: name 'last_name' is not defined
 *   The last line of an error message is usually the most informative.
 *   We will look at error messages in detail [later]({{ page.root }}/05-error-messages/).
 
+> ## Variables Persist Between Cells
+> Variables defined in one cell exist in all other cells once executed,
+> so the relative location of cells in the notebook do not matter
+> (i.e., cells lower down can still affect those above).
+> Remember: Notebook cells are just a way to organize a program:
+> as far as Python is concerned,
+> all of the source code is one long set of instructions.
+{: .callout}
+
 ## Variables can be used in calculations.
 
 *   We can use variables in calculations just as if they were values.
@@ -120,6 +130,22 @@ Age in three years: 45
 ~~~
 {: .output}
 
+## Text string.
+Snippets of text are usually called a *string*. In Python, we denote a string using
+the single `'` or double `"` quotes:
+
+~~~
+print('This is a string')
+print("This is also a string")
+~~~
+{: .python}
+
+~~~
+This is a string
+This is also a string
+~~~
+{: .output}
+
 ## Use an index to get a single character from a string.
 
 *   The characters (individual letters, numbers, and so on) in a string are
@@ -132,19 +158,15 @@ Age in three years: 45
     position.
 
 ~~~
-atom_name = 'helium'
-print(atom_name[0])
+book_name = 'I Robot'
+print(book_name[0])
 ~~~
 {: .python}
 
 ~~~
-h
+I
 ~~~
 {: .output}
-
-> ## When would I use this ?
-> This is useful when ...
-{: .callout}
 
 ## Use a slice to get a substring.
 
@@ -159,33 +181,59 @@ h
 *   The difference between stop and start is the slice's length.
 *   Taking a slice does not change the contents of the original string. Instead,
     the slice is a copy of part of the original string.
+
 ~~~
-atom_name = 'sodium'
-print(atom_name[0:3])
+book_name = 'The Fellowship of the Ring'
+print(book_name[0:3])
 ~~~
 {: .python}
 ~~~
-sod
+The
 ~~~
 {: .output}
 
 > ## When would I use this ?
-> This is useful when ...
+> This can be very useful when we want to work with a fragment of text.
+>
+> ~~~
+> text0 = 'walk'
+> text1 = 'walking'
+> text2 = 'walked'
+> print(text0[0:4])
+> print(text1[0:4])
+> print(text2[0:4])
+> ~~~
+> {: .python}
+>
+>
+> ~~~
+> walk
+> walk
+> walk
+> ~~~
+> {: .output}
 {: .callout}
 
 ## Use the built-in function `len` to find the length of a string.
+Just like you've been using print() to make values appear on the screen, there
+are many more functions to perform other tasks. One of the other essentials is
+`len()`, which will return the length of what you pass it (watch out! Not all
+things in Python have a length). You can pass it a string or a variable for a
+string into the (), and len will tell you how long it is. For example,
+`len("hello")` will say 5, because there are five letters in there. Almost
+everything in Python has a length of some sort, which you'll learn about in
+later lessons.
 
 ~~~
-print(len('helium'))
+print(len('The Gunslinger'))
 ~~~
 {: .python}
 ~~~
-6
+14
 ~~~
 {: .output}
 
-*   Nested functions are evaluated from the inside out,
-    just like in mathematics.
+*   Nested functions are evaluated from the inside out.
 
 > ## Assigning Values
 >
