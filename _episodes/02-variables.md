@@ -10,14 +10,13 @@ objectives:
 keypoints:
 - "Use variables to store values."
 - "Use `print` to display values."
-- "Variables persist between cells."
 - "Variables must be created before they are used."
+- "Python is case-sensitive."
+- "Use meaningful variable names."
 - "Variables can be used in calculations."
 - "Use an index to get a single character from a string."
 - "Use a slice to get a substring."
 - "Use the built-in function `len` to find the length of a string."
-- "Python is case-sensitive."
-- "Use meaningful variable names."
 ---
 ## Use variables to store values.
 
@@ -45,7 +44,7 @@ first_name = 'Ahmed'
 *   Python has a built-in function called `print` that prints things as text.
 *   Call the function (i.e., tell Python to run it) by using its name.
 *   Provide values to the function (i.e., the things to print) in parentheses.
-*   To add text to the printout, wrap the text in single quotations.
+*   To add text to the printout, wrap the text in single quotes (double quotes are also fine to use).
 *   The values passed to the function are called 'arguments'
 
 ~~~
@@ -104,15 +103,6 @@ NameError: name 'last_name' is not defined
 
 *   The last line of an error message is usually the most informative.
 *   We will look at error messages in detail [later]({{ page.root }}/05-error-messages/).
-
-> ## Variables Persist Between Cells
-> Variables defined in one cell exist in all other cells once executed,
-> so the relative location of cells in the notebook do not matter
-> (i.e., cells lower down can still affect those above).
-> Remember: Notebook cells are just a way to organize a program:
-> as far as Python is concerned,
-> all of the source code is one long set of instructions.
-{: .callout}
 
 ## Variables can be used in calculations.
 
