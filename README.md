@@ -1,3 +1,7 @@
+This repo has now been moved across to the Library Carpentry organisation.
+
+Find it there: https://github.com/LibraryCarpentry/lc-python-intro
+
 # Library Carpentry
 
 The Library Carpentry module '[Introduction to programming with Python](https://data-lessons.github.io/library-python-intro/)' is maintained by [Carlos Martinez](https://github.com/c-martinez) and [Richard Vankoningsveld](https://github.com/richyvk).
